@@ -32,8 +32,8 @@ public class HomePage {
     }
 
     // Navigate to Home Page
-    public void openHomePage() {
-        driver.get("https://mypwds.com");
+    public void openHomePage(String homepage) {
+        driver.get(homepage);
         wait.until(ExpectedConditions.urlContains("landing"));
     }
 

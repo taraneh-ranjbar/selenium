@@ -17,21 +17,23 @@ public class SeleniumProjectApplication {
     
     private String username = "testaccount";
     private String password = "!W@nt@N3P@$$w0rd";
+    private String homepage = "https://mypwds.com";
+    private String screenShot = "myScreenShot";
+    private int version = 0;
 
 	public static void main(String[] args) {
 		SpringApplication.run(SeleniumProjectApplication.class, args);
-		SeleniumProjectApplication spa = new SeleniumProjectApplication();
 	}
 	
 	@EventListener(ApplicationReadyEvent.class)
 	public void run() {
 		HomePage homePage = new HomePage(driver);
-        homePage.openHomePage();
+        homePage.openHomePage(homepage);
         homePage.login(username, password);
         homePage.isLoginSuccessful();
-        homePage.takeScreenshot("myScreenShot.jpg");
+        homePage.takeScreenshot(screenShot+version++ +".jpg");
         try {
-			wait();
+			wait();// Here you can start playing with it manually
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
