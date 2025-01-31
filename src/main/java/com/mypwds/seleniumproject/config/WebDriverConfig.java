@@ -19,7 +19,7 @@ public class WebDriverConfig {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");// Maximize browser window
         options.addArguments("--disable-notifications");// Block pop-ups
-        options.addArguments("--headless"); // Run in headless mode (no UI, optional)
+//        options.addArguments("--headless"); // Run in headless mode (no UI, optional)
 
         return new ChromeDriver(options);
     }
