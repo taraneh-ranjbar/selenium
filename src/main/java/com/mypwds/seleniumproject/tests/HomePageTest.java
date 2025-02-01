@@ -11,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@SpringBootTest
+//@SpringBootTest
 public class HomePageTest {
     @Autowired
     private WebDriver driver;
@@ -21,7 +21,7 @@ public class HomePageTest {
     @BeforeEach
     public void setUp() {
         homePage = new HomePage(driver);
-        homePage.openHomePage();
+        homePage.openHomePage("https://mypwds.com");
     }
 
     @Test

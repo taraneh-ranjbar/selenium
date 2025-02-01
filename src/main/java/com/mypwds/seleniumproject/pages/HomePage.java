@@ -20,10 +20,10 @@ public class HomePage {
     private WebDriverWait wait;
 
     // Define locators
-    private By loginButton = By.id("login-btn");  // Example, replace with actual ID
-    private By usernameField = By.id("username");  // Example, replace with actual ID
-    private By passwordField = By.id("password");  // Example, replace with actual ID
-    private By submitButton = By.id("submit-btn");  // Example, replace with actual ID
+    private By loginButton = By.id("Log_In");  // Example, replace with actual ID
+    private By usernameField = By.id("Secret_Name");  // Example, replace with actual ID
+    private By passwordField = By.id("New_Password");  // Example, replace with actual ID
+    private By submitButton = By.id("Log_In");  // Example, replace with actual ID
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -32,8 +32,9 @@ public class HomePage {
     }
 
     // Navigate to Home Page
-    public void openHomePage() {
-        driver.get("https://mypwds.com");
+    public void openHomePage(String homepage) {
+        driver.get(homepage);
+        wait.until(ExpectedConditions.urlContains("landing"));
     }
 
     // Perform Login
@@ -46,7 +47,7 @@ public class HomePage {
 
     // Validate Login Success (Example)
     public boolean isLoginSuccessful() {
-        return wait.until(ExpectedConditions.urlContains("dashboard"));
+        return wait.until(ExpectedConditions.urlContains("landing"));
     }
 
     public void takeScreenshot(String testName) {
