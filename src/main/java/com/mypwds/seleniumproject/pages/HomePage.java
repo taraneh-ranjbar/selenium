@@ -20,10 +20,10 @@ public class HomePage {
     private WebDriverWait wait;
 
     // Define locators
-    private By loginButton = By.id("log");  // Example, replace with actual ID
+    private By loginButton = By.id("Log_In");  // Example, replace with actual ID
     private By usernameField = By.id("Secret_Name");  // Example, replace with actual ID
     private By passwordField = By.id("New_Password");  // Example, replace with actual ID
-    private By submitButton = By.id("log");  // Example, replace with actual ID
+    private By submitButton = By.id("Log_In");  // Example, replace with actual ID
 
     public HomePage(WebDriver driver) {
         this.driver = driver;

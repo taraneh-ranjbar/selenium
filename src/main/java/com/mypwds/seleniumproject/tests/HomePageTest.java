@@ -21,7 +21,7 @@ public class HomePageTest {
     @BeforeEach
     public void setUp() {
         homePage = new HomePage(driver);
-        homePage.openHomePage();
+        homePage.openHomePage("https://mypwds.com");
     }
 
     @Test
